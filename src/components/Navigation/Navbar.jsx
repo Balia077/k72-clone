@@ -3,7 +3,8 @@ import React, { useRef } from 'react'
 const Navbar = () => {
 
     const navGreenRef = useRef(null)
-
+    const navWhiteRef = useRef(null)
+    const navWhiteRef2 = useRef(null)
 
 
     return (
@@ -17,13 +18,18 @@ const Navbar = () => {
             </div>
             <div onMouseEnter={()=>{
                 navGreenRef.current.style.height = '100%';
+                navWhiteRef.current.style.backgroundColor = 'black';
+                navWhiteRef2.current.style.backgroundColor = 'black';
             }}
             onMouseLeave={()=>{
                 navGreenRef.current.style.height = '0%';
+                navWhiteRef.current.style.backgroundColor = 'white';
+                navWhiteRef2.current.style.backgroundColor = 'white';
             }}
             className='relative bg-black h-12.5 w-[16.5vw]'>
                 <div ref={navGreenRef} className='absolute top-0 bg-[#D3FD50] h-0 w-full transition-all'></div>
-                <div className='relative'></div>
+                <div ref={navWhiteRef} className='relative h-[0.3vh] w-13 bg-white top-5.5 left-40'></div>
+                <div ref={navWhiteRef2} className='relative h-[0.2vh] w-7 bg-white top-6.5 left-46'></div>
             </div>
         </div>
     )
