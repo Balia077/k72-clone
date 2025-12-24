@@ -10,3 +10,24 @@
   src: url(../fonts/Lausanne-500.woff2);
 }
 
+.moveX{
+  animation: moveAnimation 10s infinite linear;
+}
+
+.moveLink{
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover .moveLink{
+  opacity: 1;
+}
+
+@keyframes moveAnimation{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
