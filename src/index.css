@@ -23,6 +23,10 @@
   opacity: 1;
 }
 
+.cross:hover .line{
+  background-color: #D3FD50;
+}
+
 @keyframes moveAnimation{
   from{
     transform: translateX(0);

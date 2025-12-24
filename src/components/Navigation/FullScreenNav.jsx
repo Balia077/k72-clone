@@ -3,7 +3,11 @@ import React from 'react'
 const FullScreenNav = () => {
     return (
         <div id='fullscreennav' className='z-10 text-white overflow-x-hidden h-screen w-full absolute bg-black'>
-            <div className="flex w-full justify-between p-2.5 items-start">
+            <div>
+                
+            </div>
+            <div>
+                <div className="flex w-full justify-between p-2.5 items-start">
                 <div className=''>
                     <div className='w-29.5'>
                         <svg className='w-full' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 44">
@@ -11,9 +15,9 @@ const FullScreenNav = () => {
                         </svg>
                     </div>
                 </div>
-                <div className='h-30 w-30 bg-red-500 p-2'>
-                    <div className='bg-white h-0.5 w-full rotate-45'></div>
-                    <div className='bg-white h-0.5 w-full rotate-135'></div>
+                <div className='cross h-30 w-30 relative cursor-pointer'>
+                    <div className='line h-42 w-0.5 -rotate-45 origin-top absolute bg-white'></div>
+                    <div className='line h-42 w-0.5 right-0 rotate-45 origin-top absolute bg-white'></div>
                 </div>
             </div>
             <div className=''>
@@ -85,6 +89,7 @@ const FullScreenNav = () => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     )
