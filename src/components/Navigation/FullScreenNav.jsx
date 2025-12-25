@@ -13,13 +13,19 @@ const FullScreenNav = () => {
     function gsapAnimation(){
         const tl = gsap.timeline()
         tl.to('.fullscreennav',{
-            display:'block'
+            display:'block',
         })
         tl.to('.staring', {
-            delay:0.2,
+
             height: '100%',
             stagger: {
                 amount: -0.3
+            }
+        })
+        tl.to('.staring',{
+            height:0,
+            stagger: {
+                amount: 0.3
             }
         })
         tl.to('.link',{
@@ -44,16 +50,22 @@ const FullScreenNav = () => {
             }
         })
          tl.to('.staring', {
-            height: 0,
+            height: '100%',
             stagger: {
                 amount: 0.1
+            }
+        })
+         tl.to('.staring',{
+            height:0,
+            stagger: {
+                amount: 0.5
             }
         })
         tl.to('.navLink',{
             opacity:0
         })
         tl.to('.fullscreennav',{
-            display:'none'
+            display:'none',
         })
     }
 
@@ -66,14 +78,14 @@ const FullScreenNav = () => {
     },[navOpen])
 
     return (
-        <div ref={fullScreenRef} className='fullscreennav hidden z-10 text-white overflow-hidden h-screen w-full absolute'>
+        <div ref={fullScreenRef} className='fullscreennav hidden z-10 text-white overflow-x-hidden h-screen w-full absolute bg-black'>
             <div className='h-screen w-full fixed'>
                 <div className='h-full w-full flex'>
-                    <div className='staring h-full w-1/5 bg-black'></div>
-                    <div className='staring h-full w-1/5 bg-black'></div>
-                    <div className='staring h-full w-1/5 bg-black'></div>
-                    <div className='staring h-full w-1/5 bg-black'></div>
-                    <div className='staring h-full w-1/5 bg-black'></div>
+                    <div className='staring h-full lg:w-1/5 w-1/5 bg-white'></div>
+                    <div className='staring h-full lg:w-1/5 w-1/5 bg-white'></div>
+                    <div className='staring h-full lg:w-1/5 w-1/5 bg-white'></div>
+                    <div className='staring h-full lg:w-1/5 w-1/5 bg-white'></div>
+                    <div className='staring h-full lg:w-1/5 w-1/5 bg-white'></div>
                 </div>
             </div>
             <div ref={fullNavLinksRef} className='relative'>
