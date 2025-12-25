@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
+import { NavbarContext } from '../../context/NavContext'
 
 const Navbar = () => {
 
@@ -6,6 +7,7 @@ const Navbar = () => {
     const navWhiteRef = useRef(null)
     const navWhiteRef2 = useRef(null)
 
+    const [navOpen, setNavOpen] = useContext(NavbarContext)
 
     return (
         <div className='flex fixed top-0 z-10 w-full items-start justify-between'>
@@ -16,7 +18,9 @@ const Navbar = () => {
                     </svg>
                 </div>
             </div>
-            <div onMouseEnter={()=>{
+            <div onClick={()=>{
+                setNavOpen(true)
+            }} onMouseEnter={()=>{
                 navGreenRef.current.style.height = '100%';
                 navWhiteRef.current.style.backgroundColor = 'black';
                 navWhiteRef2.current.style.backgroundColor = 'black';
