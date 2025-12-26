@@ -4,11 +4,13 @@ import { useLocation } from 'react-router-dom'
 export const NavbarContext = createContext()
 export const NavbarColorContext = createContext()
 export const NavMenuContext = createContext()
+export const NavWidContext = createContext()
 
 const NavContext = ({children}) => {
 
   const [navColor, setNavColor] = useState('white')
   const [navMenu, setNavMenu] = useState('block')
+  const [navWid, setNavWid] = useState('100%')
   const [navOpen, setNavOpen] = useState(false)
 
 
@@ -18,9 +20,11 @@ const NavContext = ({children}) => {
     if(locate === '/projects' || locate === '/agence'){
       setNavMenu('none')
       setNavColor('black')
+      setNavWid('0')
     }else{
       setNavMenu('block')
       setNavColor('white')
+      setNavWid('100%')
     }
   }, [locate])
   
@@ -29,7 +33,9 @@ const NavContext = ({children}) => {
       <NavbarContext.Provider value={[navOpen, setNavOpen]}>
         <NavbarColorContext.Provider value={[navColor, setNavColor]}>
           <NavMenuContext.Provider value={[navMenu, setNavMenu]}>
-            {children}
+            <NavWidContext.Provider value={[navWid, setNavWid]}>
+              {children}
+            </NavWidContext.Provider>
           </NavMenuContext.Provider>
         </NavbarColorContext.Provider>
       </NavbarContext.Provider>
