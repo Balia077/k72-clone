@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react'
-import { NavbarColorContext, NavbarContext } from '../../context/NavContext'
+import { NavbarColorContext, NavbarContext, NavMenuContext } from '../../context/NavContext'
 
 const Navbar = () => {
 
@@ -9,6 +9,7 @@ const Navbar = () => {
 
     const [navOpen, setNavOpen] = useContext(NavbarContext)
     const [navColor, setNavColor] = useContext(NavbarColorContext)
+    const [navMenu, setNavMenu] = useContext(NavMenuContext)
 
     return (
         <div className='flex fixed top-0 z-10 w-full items-start justify-between'>
@@ -19,7 +20,7 @@ const Navbar = () => {
                     </svg>
                 </div>
             </div>
-            <div onClick={()=>{
+            <div style = {{display:navMenu}} onClick={()=>{
                 setNavOpen(true)
             }} onMouseEnter={()=>{
                 navGreenRef.current.style.height = '100%';

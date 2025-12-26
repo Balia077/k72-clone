@@ -47,7 +47,7 @@ const Projects = () => {
    <div>
     <ProjectNav />
      <div className='lg:p-2.5 p-0 mb-[70vh]'>
-      <div className='pt-[40.5vh]'>
+      <div className='pt-[27vh]'>
         <h2 className='font-[font2] lg:text-[13vw] text-[20vw] uppercase'>Projets</h2>
       </div>
       <div className='lg:-mt-20 -mt-7.5 lol'>
