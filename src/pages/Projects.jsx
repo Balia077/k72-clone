@@ -1,9 +1,10 @@
-import React from 'react'
+
 import ProjectsCard from '../components/projects/ProjectsCard'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import ProjectBottom from '../components/projects/ProjectBottom'
+import ProjectNav from '../components/projects/ProjectNav'
 
 const Projects = () => {
 
@@ -29,21 +30,23 @@ const Projects = () => {
 
   useGSAP(function(){
     gsap.from('.hero',{
-      height:'10px',
+      height:'30px',
       stagger:{
-        amount:0.6
+        amount:0.4
       },
       scrollTrigger:{
         trigger:'.lol',
         start:'top 100%',
-        end:'top -300%',
+        end:'top -270%',
         scrub: true
       }
     })
   })
 
   return (
-    <div className='lg:p-2.5 p-0 mb-[70vh]'>
+   <div>
+    <ProjectNav />
+     <div className='lg:p-2.5 p-0 mb-[70vh]'>
       <div className='pt-[40.5vh]'>
         <h2 className='font-[font2] lg:text-[13vw] text-[20vw] uppercase'>Projets</h2>
       </div>
@@ -56,6 +59,7 @@ const Projects = () => {
       </div>
         <ProjectBottom />
     </div>
+   </div>
   )
 }
 
