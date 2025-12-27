@@ -5,6 +5,7 @@ import Agence from './pages/Agence'
 import Projects from './pages/Projects'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
+import ProjectNav from './components/projects/ProjectNav'
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
     <div className='overflow-x-hidden'>
       <Navbar />
       <FullScreenNav />
+      <ProjectNav />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />
