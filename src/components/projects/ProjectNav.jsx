@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { NavbarContext, NavbarWidContext } from '../../context/NavContext'
+import { NavbarContext, NavbarHeightContext, NavbarWidContext } from '../../context/NavContext'
 
 const ProjectNav = () => {
 
@@ -12,9 +12,10 @@ const ProjectNav = () => {
 
     const [navOpen, setNavOpen] = useContext(NavbarContext)
     const [navBarWid, setNavBarWid] = useContext(NavbarWidContext)
+    const [navBarHeight, setNavBarHeight] = useContext(NavbarHeightContext)
 
   return (
-    <div style={{width:navBarWid}} className='w-full flex font-[font2] top-0 items-start justify-end'>
+    <div style={{width:navBarWid,height:navBarHeight}} className='w-full flex font-[font2] top-0 items-start justify-end'>
       <div onMouseEnter={()=>{
         NavGreenRef.current.style.height = '100%';
         NavGreenRef.current.style.color = 'black';
