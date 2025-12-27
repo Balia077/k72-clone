@@ -23,7 +23,8 @@ const Navbar = () => {
             </div>
             <div style = {{display:navMenu}} onClick={()=>{
                 setNavOpen(true)
-            }} onMouseEnter={()=>{
+            }} 
+            onMouseEnter={()=>{
                 navGreenRef.current.style.height = '100%';
                 navWhiteRef.current.style.backgroundColor = 'black';
                 navWhiteRef2.current.style.backgroundColor = 'black';

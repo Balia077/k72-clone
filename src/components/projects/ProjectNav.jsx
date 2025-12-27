@@ -1,5 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { NavbarContext } from '../../context/NavContext'
 
 const ProjectNav = () => {
 
@@ -8,6 +9,8 @@ const ProjectNav = () => {
     const NavGreenRef3 = useRef(null)
     const NavLinesRef = useRef(null)
     const NavLinesRef2 = useRef(null)
+
+    const [navOpen, setNavOpen] = useContext(NavbarContext)
 
   return (
     <div className='w-full flex font-[font2] top-0 items-start justify-end'>
@@ -32,7 +35,10 @@ const ProjectNav = () => {
       }} className='relative text-white lg:h-[5.5vw] h-0 lg:w-[30vw] bg-black flex'>
       <div ref={NavGreenRef2} className='absolute h-0 w-full bg-[#D3FD50] text-white transition-all lg:text-[1.4vw] text-[0px] cursor-pointer'><Link className='w-full h-full absolute px-3 uppercase leading-34' to={'/agence'}>agence</Link></div>
       </div>
-      <div onMouseEnter={()=>{
+      <div onClick={()=>{
+        setNavOpen(true)
+      }}
+      onMouseEnter={()=>{
         NavGreenRef3.current.style.height = '100%';
         NavGreenRef3.current.style.color = 'black';
         NavLinesRef.current.style.backgroundColor = 'black';
