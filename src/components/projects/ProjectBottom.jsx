@@ -11,7 +11,7 @@ const ProjectBottom = () => {
             <div className='hover:text-[#D3FD50] h-[4.7vw] w-[8.5vw] border-2 px-5 rounded-full text-[5vw] leading-20'><h2>be</h2></div>
         </div>
         <div className='hover:text-[#D3FD50] font-[font2] text-[5vw] uppercase flex'>
-            <div className='absolute right-20 border-2 rounded-full px-6.5 items-center leading-13.5 pt-3'>
+            <div className='absolute right-5 border-2 rounded-full px-6.5 items-center leading-13.5 pt-3'>
                 <h2>contact</h2>
             </div>
         </div>
